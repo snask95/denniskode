@@ -1,0 +1,21 @@
+<html>
+<head>
+<head>
+<body>
+    </img><img src="../../assets/img/mand.png" alt="walk01" class="walk"/>
+    <div id="scrollDiv"></div>
+    <script>
+        var imageArr = ["../../assets/img/mand.png","../../assets/img/mandleft.png","../../assets/img/mandright.png"];
+        var image = 1;
+        $(window).scroll(function() {
+            console.log("scrolled");
+            windowScrollCount   = $(this).scrollTop();
+            animationFrame      = (windowScrollCount / 20);
+
+            animationFrame = Math.floor(animationFrame % imageArr.length);
+            console.log(animationFrame + " : " + windowScrollCount);
+            $('.walk').attr("src", imageArr[animationFrame]);
+        });
+    </script>
+</body>
+</html>
